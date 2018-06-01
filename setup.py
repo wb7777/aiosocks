@@ -29,9 +29,20 @@ setup(
         author_email='ibragwork@gmail.com',
         version=version,
         license='Apache 2',
-        url='https://github.com/nibrag/aiosocks',
+        url='https://github.com/wb7777/aiosocks',
 
         description='SOCKS proxy client for asyncio and aiohttp',
         long_description=open("README.rst").read(),
-        packages=['aiosocks']
+        classifiers=(
+            "License :: OSI Approved :: Apache Software License"
+            "Programming Language :: Python :: 3 :: Only",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+        ),
+
+        packages=['aiosocks'],
+        install_requires=[
+            'aiohttp>=2.3.2',
+        ],
+        tests_require=['pytest>=2.1'],
 )
