@@ -1,8 +1,15 @@
 try:
     import aiohttp
-    from aiohttp.client_exceptions import certificate_errors, ssl_errors
 except ImportError:  # pragma: no cover
     raise ImportError('aiosocks.SocksConnector require aiohttp library')
+
+from aiohttp.client_exceptions import ssl_errors
+
+# fix aiohttp 3.4.0 changes
+try:
+    from aiohttp.client_exceptions import certificate_errors
+except ImportError:
+    from aiohttp.client_exceptions import cert_errors
 
 from .errors import SocksConnectionError
 from .helpers import Socks4Auth, Socks5Auth, Socks4Addr, Socks5Addr
