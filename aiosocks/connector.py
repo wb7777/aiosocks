@@ -9,7 +9,7 @@ from aiohttp.client_exceptions import ssl_errors
 try:
     from aiohttp.client_exceptions import certificate_errors
 except ImportError:
-    from aiohttp.client_exceptions import cert_errors
+    from aiohttp.client_exceptions import cert_errors as certificate_errors
 
 from .errors import SocksConnectionError
 from .helpers import Socks4Auth, Socks5Auth, Socks4Addr, Socks5Addr
